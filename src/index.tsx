@@ -1,31 +1,42 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// jsx
-const h1 = (
-    <h1 id="title" className="sdfh">
-        Hello React.js
-    </h1>
-)
-console.log(h1)
+const Title = () => {
+    return <h1>Hello App.js</h1>
+}
 
-let a = 10
-let b = 'Hello test'
+const Content = () => {
+    return (
+        <React.Fragment>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                quia ex autem doloribus libero quo vitae excepturi vero cum,
+                sunt deserunt itaque cumque. Adipisci qui quaerat vitae, labore
+                commodi odit.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                obcaecati reprehenderit, tempora at voluptatibus laudantium
+                inventore. Laboriosam sapiente modi recusandae nulla quas
+                voluptatibus, dolorum quis dolor accusantium voluptates
+                asperiores pariatur?
+            </p>
+        </React.Fragment>
+    )
+}
 
-const list = (
-    <ul>
-        <li>List item {a + 10 + 2}</li>
-        <li>List item {b}</li>
-        <li>List item 3</li>
-    </ul>
-)
-
-const content = (
-    <div>
-        {h1}
-        {list}
-    </div>
-)
+function App() {
+    return (
+        <>
+            <Title />
+            <Content />
+        </>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<React.StrictMode>{content}</React.StrictMode>)
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+)
